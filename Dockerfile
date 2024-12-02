@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt
+RUN chown 1000:1000 -R /code
 
 # User
 RUN useradd -m --groups users,sudo  -u 1000 user
